@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Website</h1>
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="event.html">Event</a></li>
+          </ul>
+        </nav>
+    </header>
+    <h1>onclick event</h1>
+    <button onclick="myFunction0()">Click me</button>
+    <p id="demo0"></p>
+
+    <h1>onblur event</h1>
+    Enter your name: <input type="text" id="fname" onblur="myFunction1()">
+    <p>When you leave the input field, a function is triggered which transforms the input text to upper case.</p>
+
+    <h1>onchange event</h1>
+    <select id="mySelect" onchange="myFunction2()">
+        <option value="Audi">Audi</option>
+        <option value="Mercedes">Mercedes</option> 
+    </select>
+    <p>When you select a new car, a function is triggered which outputs the value of the selected car.</p>
+    <p id="demo1"></p>
+
+    <h1>dbclick event</h1>
+    <p ondblclick="myFunction3()">Double-click this paragraph to trigger a function.</p>
+    <p id="demo11"></p>
+
+    <h1>focusin event</h1>
+    Enter your name: <input type="text" onfocusin="myFunction4(this)">
+    <p>When the input field gets focus, a function changes the background-color.</p>
+
+    <h1>mouseover event</h1>
+    <h1 id="demo55">"Mouse over me"</h1>
+ 
+    <script>
+        //onclick
+    function myFunction0() {
+        document.getElementById("demo0").innerHTML = "Hello World";
+    }
+
+        //onblur
+        function myFunction1() {
+            let x = document.getElementById("fname");
+            x.value = x.value.toUpperCase();
+        }
+
+        //onchange
+        function myFunction2() {
+            var x = document.getElementById("mySelect").value;
+            document.getElementById("demo1").innerHTML = "You selected: " + x;
+        }
+
+        //dbclick
+        function myFunction3() {
+            document.getElementById("demo11").innerHTML += "Hello";
+        }
+
+        //focusin
+        function myFunction4(x) {
+            x.style.background = "red";
+        }
+
+        //mouseover
+        document.getElementById("demo55").onmouseover = function() {mouseOver()};
+        document.getElementById("demo55").onmouseout = function() {mouseOut()};
+        function mouseOver() {
+            document.getElementById("demo55").style.color = "red";
+        }
+        function mouseOut() {
+            document.getElementById("demo55").style.color = "black";
+        }
+
+    </script>
+
+</body>
+</html>
